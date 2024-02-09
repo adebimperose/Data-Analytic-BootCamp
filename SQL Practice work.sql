@@ -1,6 +1,6 @@
 ---- Creating Database Bootcam
 CREATE DATABASE BootCamp;
-
+---creating a database for working
 ---to view Livestock_Table
 SELECT*
 FROM dbo.[Livestock Table]
@@ -14,12 +14,14 @@ VALUES (01, 'Cattle',  200000, 100000, 250000),
 (03, 'Pigs', 27000, 135000,10000),
 (04, 'Goat', 40000, 20000, 40000),
 (05, 'Horses', 550000, 275000, 55000);
+--- inserting tables
 
 
 ALTER TABLE dbo.[Livestock Table]
 --ALTER COLUMN Unitprice money;
 --ALTER COLUMN cost money;
 ALTER COLUMN profit money;
+inserting table for colum
 
 -----Inserting Values Customer Table 
 INSERT INTO dbo.[Customer Table]
@@ -27,9 +29,11 @@ VALUES('Ahmed Johson', 10, 5,'Abuja Nigeria',2),
 ('Rose Adeboye', 15, 3,'Akure Nigeria', 1),
 ('Jennifer Okoro', 20, 15,'Anambra America', 5),
 ('Caleb Oya', 25, 10, 'WUSE America', 4);
+--- inserting tables
 
 SELECT*
 FROM dbo.[Customer Table]
+----data for customertable
 
 ----To create Delivery Table. click on table select new and type in all tjhe data
 ALTER TABLE dbo.DeliveryTable
@@ -153,6 +157,7 @@ Order by Customernames ---DESC;
 --- Average cost livestock table on customertable with livestock id which gives livestock table with the identity.
 
 Select Current_Timestamp As CurrentDateTime;
+---syntax to check for current time
 
 --- ANALYSIS FOR SALES FROM INVOICEDATA
 Select sum (sales) As TotalSales From dbo.InvoiceData  ---Total sales of invoice data
@@ -160,6 +165,7 @@ Select Min(sales) As MinimumSAles From dbo.InvoiceData--- Minimum Sales of Invoi
 Select Max(sales) As MAximumSales From dbo.InvoiceData--- Maximum Sales of Invoice
 Select AVG(sales) As AverageSales From dbo.InvoiceData--- Average Sales of Invoice
 Select Count(sales)As CountofSAles From dbo.InvoiceData---Count of Sales of Invoice
+---calculation for different funtions
 
 select*From dbo.InvoiceData
 Where Sales >=1000 --- Sales Greater than 1000 from invoiceData
@@ -337,7 +343,7 @@ From dbo.CustomerData
 UNION ALL
 SELECT CustomerNames
 From [Customer Table]
-
+---- union of all tables
 
 
 SELECT CustomerID
@@ -381,12 +387,12 @@ WITH SuperMarket As (
 Select * 
 ---Into SuperMarket
 From Supermarket
----Wwith is used to brings out specified group of data
+---WITH is used to brings out specified group of data
 
 SELECT CustomerCode, Quantity
 FROM dbo.InvoiceData
 WHERE CustomerCode Like '_2' and Quantity Like '_0_'
----- this is where customercodethaoth 2 and quantity ends with 0
+---- this is where customercodethatoth 2 and quantity ends with 0
 
 SELECT Customername, City
 FROM  dbo.CustomerData
